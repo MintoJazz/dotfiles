@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+theme="~/.config/rofi/meu-tema/applets.rasi"
+
 # Function to get current SSID without forcing a rescan
 get_current_ssid() {
     local active_conn=$(nmcli -t -f NAME,DEVICE connection show --active | grep ":wlp1s0" | cut -d':' -f1)
@@ -17,7 +19,7 @@ get_wifi_status() {
 
 # Function to get Wi-Fi list without forcing a rescan
 get_wifi_list() {
-    nmcli --fields "SECURITY,SSID" device wifi list --rescan yes | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d"
+    nmcli --fields "SECURITY,SSID" device wifi list --rescan no | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d"
 }
 
 # Function to force a Wi-Fi rescan
@@ -55,7 +57,7 @@ fi
 
 # Use rofi to select Wi-Fi network or action
 chosen_network=$(echo -e "$toggle\n$rescan_option\n$wifi_list" | uniq -u | rofi -dmenu \
-    -i -selected-row 1 -p "Wi-Fi")
+    -theme $theme -i -selected-row 1 -p "Wi-Fi")
 chosen_id=$(echo "${chosen_network:3}" | sed 's/$//' | sed 's/ *$//')
 
 if [[ -z "$chosen_network" ]]; then

@@ -1,0 +1,91 @@
+@import "./global.rasi"
+
+window {
+    background-color: @background; /* Usa o background definido globalmente */
+    border: 2px; /* Largura da borda da janela */
+    border-color: @border-color; /* Cor da borda, definida globalmente */
+    padding: 0; /* Preenchimento interno (não haverá espaço entre borda e conteúdo) */
+    width: 35%; /* Largura da janela (35% da tela) */
+    location: north; /* Centraliza a janela na tela */
+}
+
+/* --- Caixa Principal (mainbox) --- */
+mainbox {
+    spacing: 0px; /* Espaçamento entre a barra de entrada e a lista */
+    padding: 0px; /* Preenchimento interno */
+}
+
+mode-switcher {
+    spacing: 0px; /* Espaçamento entre os botões de modo */
+    background-color: @background; /* Cor de fundo das abas, mesma da inputbar */
+}
+
+/* --- Botão de Modo (button) --- */
+button {
+    padding: 8px; /* Preenchimento interno do bloco do seletor */
+    background-color: transparent; /* Fundo transparente por padrão */
+    text-color: @foreground; /* Cor do texto das abas não selecionadas */
+    font: @font;
+}
+
+/* --- Botão de Modo Selecionado (button selected) --- */
+button selected {
+    background-color: @selected-background; 
+    text-color: @selected-foreground; 
+    font: @font-bold;
+}
+
+/* --- Lista de Resultados (listview) --- */
+/* Onde os resultados da pesquisa são exibidos */
+listview {
+    enabled: true; /* Garante que a lista está visível */
+    columns: 1; /* Uma coluna para os resultados */
+    scrollbar: false; /* Não mostrar barra de rolagem */
+    background-color: @background; /* Cor de fundo da área da lista */
+    dynamic: true;
+    fixed-height: false;
+    lines:10;
+}
+
+/* --- Item da Lista (element) --- */
+/* Estilo para cada item individual na lista de resultados */
+element {
+    padding: 3px 14px;  /*Preenchimento interno da lista */
+    background-color: @background; /* Fundo do item (normal) */
+    text-color: @foreground; /* Cor do texto do item (normal) */
+    spacing: 8px; /* Espaçamento entre o ícone e o texto do item */
+    orientation: horizontal; /* Ícone e texto lado a lado */
+    children: [ element-text ]; /* Ordem dos elementos internos (ícone, texto) */
+}
+
+/* --- Estado Normal do Item (element normal) --- */
+/* Quando o item não está selecionado nem com o mouse em cima */
+element normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+/* --- Estado Alternado do Item (element alternate) --- */
+/* Rofi pode alternar cores de fundo para cada linha, se desejar */
+element alternate {
+    background-color: @background; /* Mantendo o mesmo fundo para normal e alternado para um visual clean */
+    text-color: @foreground;
+}
+
+/* --- Estado Selecionado do Item (element selected) --- */
+/* Quando o item está selecionado (usando setas do teclado) */
+element selected {
+    background-color: @selected-background; /* Fundo do item selecionado */
+    text-color: @selected-foreground; /* Texto do item selecionado */
+    font: @font; /* Item selecionado em negrito para destaque */
+    border-radius: 0px;
+}
+
+/* --- Texto do Elemento (element-text) --- */
+element-text {
+    background-color: transparent; /* Fundo transparente */
+    text-color: inherit; /* Herda a cor do texto do elemento pai */
+    expand: true; /* Faz o texto expandir para ocupar espaço */
+    horizontal-align: 0; /* Alinhamento horizontal (0 = esquerda) */
+    vertical-align: 0.5; /* Alinhamento vertical (0.5 = centro) */
+}

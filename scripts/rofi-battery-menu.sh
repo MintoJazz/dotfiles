@@ -1,5 +1,7 @@
 #!/bin/bash
 
+theme="~/.config/rofi/meu-tema/applets.rasi"
+
 # Get battery info using acpi
 acpi_output=$(acpi -b)
 
@@ -28,7 +30,7 @@ fi
 options="$options\n󰒓 Open Power Manager"
 
 # Launch rofi with custom theme
-chosen=$(echo -e "$options" | rofi -dmenu -p "Battery"Fi)
+chosen=$(echo -e "$options" | rofi -dmenu -theme $theme -p "Battery"Fi)
 
 # Handle selection
 case "$chosen" in

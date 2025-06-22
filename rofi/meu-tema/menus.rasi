@@ -1,0 +1,31 @@
+@import "./style.rasi"
+
+mainbox {
+    children: [ inputbar, listview, mode-switcher ];
+}
+
+/* --- Barra de Entrada (inputbar) --- */
+inputbar {
+    children: [ prompt, entry ]; 
+    spacing: 0px; 
+    background-color: @background; 
+    padding: 4px;
+}
+
+/* --- Prompt (ex: "run:" ou ">") --- */
+prompt {
+    enabled: true;
+    padding: 0px 10px;
+    background-color: @background;
+    text-color: @prompt-color;
+    font: @font;
+}
+
+/* --- Campo de Entrada (entry) --- */
+entry {
+    background-color: @background; /* Mesma cor de fundo da inputbar */
+    text-color: @foreground; /* Cor do texto digitado */
+    padding: 0px 10px; /* Espaçamento à direita do texto */
+    expand: true; /* Faz com que o campo de entrada ocupe o máximo de espaço disponível */
+    placeholder-color: @placeholder-text-color; /* Cor do texto do placeholder */
+}

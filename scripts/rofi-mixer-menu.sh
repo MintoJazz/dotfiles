@@ -1,9 +1,11 @@
 #!/bin/env sh
 
 BASEDIR=$(dirname "$0")
+theme="~/.config/rofi/meu-tema/applets.rasi"
 
 # Run Rofi and capture exit code
 rofi \
+  -theme $theme \
   -kb-custom-16 "Ctrl+equal" \
   -kb-custom-17 "Alt+m" \
   -kb-custom-18 "minus,underscore" \

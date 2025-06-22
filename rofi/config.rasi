@@ -15,9 +15,7 @@ configuration {
 	scroll-method: 0;
 	normalize-match: true;
 	show-icons: false;
-/*	cache-dir: ;*/
 	steal-focus: false;
-/*	dpi: -1;*/
 
 	/*---------- Matching setting ----------*/
 	matching: "normal";
@@ -178,4 +176,4 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
-@theme "./themes/meu-tema.rasi"
+@theme "./meu-tema/menus.rasi"

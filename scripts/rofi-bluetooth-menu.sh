@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
-#             __ _       _     _            _              _   _
-#  _ __ ___  / _(_)     | |__ | |_   _  ___| |_ ___   ___ | |_| |__
-# | '__/ _ \| |_| |_____| '_ \| | | | |/ _ \ __/ _ \ / _ \| __| '_ \
-# | | | (_) |  _| |_____| |_) | | |_| |  __/ || (_) | (_) | |_| | | |
-# |_|  \___/|_| |_|     |_.__/|_|\__,_|\___|\__\___/ \___/ \__|_| |_|
-#
-# Author: Nick Clyde (clydedroid)
-# Updated by ChatGPT to include battery level for connected devices
+
+theme="~/.config/rofi/meu-tema/applets.rasi"
 
 goback="Back 󰌍"
 on="ON"
@@ -204,7 +198,7 @@ show_menu() {
     esac
 }
 
-rofi_command="rofi -dmenu $* -p Bluetooth"
+rofi_command="rofi -dmenu $* -theme $theme -p Bluetooth"
 
 case "$1" in
     --status) print_status ;;

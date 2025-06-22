@@ -1,0 +1,22 @@
+* {
+    /* CORES */
+    background: #1F1F1F;
+    background-alt: #373B41;
+    foreground: #FFFFFF;
+    primary: #C5C8C6;
+    secondary: #8ABEB7;
+    alert: #A54242;
+    disabled: #707880;
+
+    /* FONTES */
+    font: "JetBrainsMono 9"; 
+    font-bold: "JetBrainsMono Nerd Font Bold 9";
+
+    selected-background: @background-alt;     /* Fundo do item selecionado na lista */
+    selected-foreground: @foreground;    /* Texto do item selecionado (para criar contraste) */
+
+    border-color: @foreground;            /* Cor das bordas */
+
+    prompt-color: @primary;              /* Cor do texto do prompt (ex: "run:") */
+    placeholder-text-color: @disabled;   /* Cor do texto do placeholder (ex: "Pesquisar...") */
+}

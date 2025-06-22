@@ -85,7 +85,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+Shift+space focus mode_toggle
 floating_modifier $mod
 tiling_drag modifier titlebar
-bindsym $mod+c reload
+bindsym $mod+c exec ~/.config/i3/script-include.sh
 bindsym $mod+r restart
 bindsym $mod+e exec "i3-nagbar -t warning -m 'Você pressionou o atalho de saída. Tem certeza que deseja sair do i3? Isso encerrará sua sessão X.' -B 'Sim, sair do i3' 'i3-msg exit'"
 exec_always --no-startup-id ~/.config/polybar/launch.sh

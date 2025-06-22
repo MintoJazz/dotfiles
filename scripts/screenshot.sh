@@ -7,6 +7,7 @@
 ## Adaptado para usar o tema padrão do Rofi.
 
 # Elementos do menu
+theme="~/.config/rofi/meu-tema/applets.rasi"
 prompt='Screenshot'
 mesg="Salvar em: `xdg-user-dir PICTURES`/Screenshots"
 
@@ -20,6 +21,7 @@ option_5=" Capturar em 10s"
 # Comando Rofi simplificado para usar o tema padrão
 rofi_cmd() {
     rofi -dmenu \
+         -theme $theme\
          -p "$prompt" \
          -mesg "$mesg" \
          -markup-rows
