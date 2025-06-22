@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=[config] Picom
+Exec=alacritty -e code .config/picom/picom.conf
+Terminal=false
+Type=Application
+Categories=Utility;

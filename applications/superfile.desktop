@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Superfile
+Exec=alacritty -e spf
+Terminal=false
+Type=Application
+Categories=Utility;FileManager;

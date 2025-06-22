@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name= [config] i3
+Exec=alacritty -e code .config/i3/
+Terminal=false
+Type=Application
+Categories=Utility
