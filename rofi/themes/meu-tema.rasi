@@ -1,0 +1,152 @@
+/* Tema Rofi com cores do Polybar */
+
+/* Seletor Global: Define variáveis de cor e configurações padrão */
+* {
+    /* Cores que você forneceu do seu Polybar */
+    polybar-background: #1F1F1F;
+    polybar-background-alt: #373B41;
+    polybar-foreground: #FFFFFF;
+    polybar-primary: #C5C8C6;
+    polybar-secondary: #8ABEB7;
+    polybar-alert: #A54242;
+    polybar-disabled: #707880;
+
+    /* Mapeamento das suas cores para as propriedades padrão do Rofi */
+    background: @polybar-background;             /* Fundo principal do Rofi */
+    foreground: @polybar-foreground;             /* Cor principal do texto */
+    background-alt: @polybar-background-alt;     /* Fundo alternativo (usado na barra de entrada) */
+
+    selected-background: @polybar-background-alt;     /* Fundo do item selecionado na lista */
+    selected-foreground: @polybar-foreground;    /* Texto do item selecionado (para criar contraste) */
+
+    border-color: @polybar-foreground;            /* Cor das bordas */
+
+    prompt-color: @polybar-primary;              /* Cor do texto do prompt (ex: "run:") */
+    placeholder-text-color: @polybar-disabled;   /* Cor do texto do placeholder (ex: "Pesquisar...") */
+
+    /* Configuração de fonte global (você pode sobrescrever nos elementos específicos) */
+    font: "JetBrainsMono 9"; /* Ajustado para sua fonte atual do config.rasi */
+}
+
+/* --- Janela Principal do Rofi (window) --- */
+window {
+    background-color: @background; /* Usa o background definido globalmente */
+    border: 2px; /* Largura da borda da janela */
+    border-color: @border-color; /* Cor da borda, definida globalmente */
+    padding: 0; /* Preenchimento interno (não haverá espaço entre borda e conteúdo) */
+    /*border-radius: 8px;  Arredondamento dos cantos da janela */
+    /* box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.3); Sombra para dar profundidade */
+    width: 35%; /* Largura da janela (35% da tela) */
+    location: north; /* Centraliza a janela na tela */
+}
+
+/* --- Caixa Principal (mainbox) --- */
+/* O mainbox contém a barra de entrada e a lista de resultados */
+mainbox {
+    children: [ inputbar, listview, mode-switcher ]; /* Define a ordem dos elementos */
+    spacing: 0px; /* Espaçamento entre a barra de entrada e a lista */
+    padding: 0px; /* Preenchimento interno */
+}
+
+mode-switcher {
+    spacing: 0px; /* Espaçamento entre os botões de modo */
+    background-color: @background; /* Cor de fundo das abas, mesma da inputbar */
+}
+
+/* --- Botão de Modo (button) --- */
+button {
+    padding: 8px; /* Preenchimento interno do bloco do seletor */
+    background-color: transparent; /* Fundo transparente por padrão */
+    text-color: @foreground; /* Cor do texto das abas não selecionadas */
+    font: "JetBrainsMono Nerd Font 9";
+}
+
+/* --- Botão de Modo Selecionado (button selected) --- */
+button selected {
+    background-color: @selected-background; /* Fundo da aba selecionada */
+    text-color: @selected-foreground; /* Texto da aba selecionada */
+    font: "JetBrainsMono Nerd Font Bold 9"; /* Fonte em negrito para a aba selecionada */
+}
+
+/* --- Barra de Entrada (inputbar) --- */
+/* Onde você digita o texto de pesquisa */
+inputbar {
+    children: [ prompt, entry ]; /* Define a ordem do prompt e do campo de entrada */
+    spacing: 0px; /* Espaçamento entre o prompt e o campo de entrada */
+    background-color: @background; /* Usa o background-alt definido globalmente */
+    /*border-radius: 8px 8px 0px 0px;  Arredonda apenas os cantos superiores */
+    padding: 7px; /* Preenchimento interno da barra de entrada */
+}
+
+/* --- Prompt (ex: "run:" ou ">") --- */
+prompt {
+    enabled: true; /* Garante que o prompt está visível */
+    padding: 0px 10px; /* Espaçamento à direita do prompt */
+    background-color: @background; /* Mesma cor de fundo da inputbar */
+    text-color: @prompt-color; /* Cor do texto do prompt, definida globalmente */
+    font: "JetBrainsMono Nerd Font 9"; /* Fonte específica para o prompt (negrito), ajustado para sua fonte */
+}
+
+/* --- Campo de Entrada (entry) --- */
+/* Onde o texto de pesquisa é realmente digitado */
+entry {
+    background-color: @background; /* Mesma cor de fundo da inputbar */
+    text-color: @foreground; /* Cor do texto digitado */
+    padding: 0px 10px; /* Espaçamento à direita do texto */
+    expand: true; /* Faz com que o campo de entrada ocupe o máximo de espaço disponível */
+    placeholder-color: @placeholder-text-color; /* Cor do texto do placeholder */
+}
+
+/* --- Lista de Resultados (listview) --- */
+/* Onde os resultados da pesquisa são exibidos */
+listview {
+    enabled: true; /* Garante que a lista está visível */
+    columns: 1; /* Uma coluna para os resultados */
+    spacing: 2px; /* Espaçamento entre os itens da lista */
+    scrollbar: false; /* Não mostrar barra de rolagem */
+    background-color: @background; /* Cor de fundo da área da lista */
+}
+
+/* --- Item da Lista (element) --- */
+/* Estilo para cada item individual na lista de resultados */
+element {
+    padding: 4px 14px;  /*Preenchimento interno da lista */
+    background-color: @background; /* Fundo do item (normal) */
+    text-color: @foreground; /* Cor do texto do item (normal) */
+    /*border-radius: 4px;  Arredondamento dos cantos de cada item */
+    spacing: 8px; /* Espaçamento entre o ícone e o texto do item */
+    orientation: horizontal; /* Ícone e texto lado a lado */
+    children: [ element-text ]; /* Ordem dos elementos internos (ícone, texto) */
+}
+
+/* --- Estado Normal do Item (element normal) --- */
+/* Quando o item não está selecionado nem com o mouse em cima */
+element normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+/* --- Estado Alternado do Item (element alternate) --- */
+/* Rofi pode alternar cores de fundo para cada linha, se desejar */
+element alternate {
+    background-color: @background; /* Mantendo o mesmo fundo para normal e alternado para um visual clean */
+    text-color: @foreground;
+}
+
+/* --- Estado Selecionado do Item (element selected) --- */
+/* Quando o item está selecionado (usando setas do teclado) */
+element selected {
+    background-color: @selected-background; /* Fundo do item selecionado */
+    text-color: @selected-foreground; /* Texto do item selecionado */
+    font: "JetBrainsMono Nerd Font 9"; /* Item selecionado em negrito para destaque */
+    border-radius: 0px;
+}
+
+/* --- Texto do Elemento (element-text) --- */
+element-text {
+    background-color: transparent; /* Fundo transparente */
+    text-color: inherit; /* Herda a cor do texto do elemento pai */
+    expand: true; /* Faz o texto expandir para ocupar espaço */
+    horizontal-align: 0; /* Alinhamento horizontal (0 = esquerda) */
+    vertical-align: 0.5; /* Alinhamento vertical (0.5 = centro) */
+}

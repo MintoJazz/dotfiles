@@ -180,4 +180,4 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
-@theme "~/.local/share/rofi/themes/meu-tema.rasi"
+@theme "./themes/meu-tema.rasi"
