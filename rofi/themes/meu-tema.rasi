@@ -105,6 +105,7 @@ listview {
     spacing: 2px; /* Espaçamento entre os itens da lista */
     scrollbar: false; /* Não mostrar barra de rolagem */
     background-color: @background; /* Cor de fundo da área da lista */
+    dynamic: true;
 }
 
 /* --- Item da Lista (element) --- */

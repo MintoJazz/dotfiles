@@ -7,8 +7,6 @@
  **/
 
 configuration {
-	lines: 10;
-
 	/*---------- General setting ----------*/
 	modi: "drun,run,filebrowser,window";
 	case-sensitive: false;

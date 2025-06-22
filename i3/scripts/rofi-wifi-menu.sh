@@ -17,7 +17,7 @@ get_wifi_status() {
 
 # Function to get Wi-Fi list without forcing a rescan
 get_wifi_list() {
-    nmcli --fields "SECURITY,SSID" device wifi list --rescan no | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d"
+    nmcli --fields "SECURITY,SSID" device wifi list --rescan yes | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d"
 }
 
 # Function to force a Wi-Fi rescan
@@ -27,7 +27,7 @@ rescan_wifi() {
 
 # Main logic
 current_ssid=$(get_current_ssid)
-echo $current_ssid
+current_ssid_name=$(echo $current_ssid | cut -d'-' -f3)
 wifi_status=$(get_wifi_status)
 raw_list=$(get_wifi_list)
 
@@ -35,7 +35,7 @@ raw_list=$(get_wifi_list)
 wifi_list=""
 while IFS= read -r line; do
     ssid=$(echo "$line" | awk '{print $NF}')
-    if [[ "$ssid" == "$current_ssid" ]]; then
+    if [[ "$ssid" == "$current_ssid_name" ]]; then
         wifi_list+="$line "$'\n'
     else
         wifi_list+="$line"$'\n'
@@ -46,10 +46,10 @@ wifi_list=$(echo "$wifi_list" | sed '/^$/d')
 
 # Set toggle and rescan options based on Wi-Fi status
 if [[ "$wifi_status" == "enabled" ]]; then
-    toggle="󰖪  Disable Wi-Fi"
+    toggle="󰖪 Disable Wi-Fi"
     rescan_option="󰑓 Refresh Scan"
 else
-    toggle="󰖩  Enable Wi-Fi"
+    toggle="󰖩 Enable Wi-Fi"
     rescan_option=""
 fi
 
