@@ -1,0 +1,5 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name= Gemini
+Exec= firefox gemini.google.com/app
+Type=Application

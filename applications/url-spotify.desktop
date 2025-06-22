@@ -1,0 +1,5 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name= Spotify
+Exec= firefox https://open.spotify.com/intl-pt/
+Type=Application

@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name= [config] Menu
-Exec=alacritty -e code .local/share/applications/
-Terminal=false
-Type=Application
-Categories=Utility;

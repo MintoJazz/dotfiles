@@ -1,6 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=[config] Temas Rofi
-Exec=alacritty -e code .local/share/rofi/themes/
-Terminal=false
-Type=Application

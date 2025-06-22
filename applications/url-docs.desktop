@@ -1,0 +1,5 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name= Google Docs
+Exec= firefox docs.google.com
+Type=Application
