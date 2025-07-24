@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name= Dotfiles
-Exec=alacritty -e code Documents/GitHub/dotfiles
+Exec=alacritty -e code Documentos/GitHub/dotfiles
 Terminal=false
 Type=Application
