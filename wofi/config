@@ -1,0 +1,13 @@
+# Configurações do Wofi
+
+# Numero de linhas na lista (rolagem ativa)
+lines=10
+
+width = 550px
+
+location = 2 # top
+yoffset = 12
+style=/home/mintojazz/Documents/GitHub/dotfiles/wofi
+hide_scroll=true
+prompt=
+no_actions=true

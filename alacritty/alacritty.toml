@@ -1,0 +1,13 @@
+[window]
+padding.x = 10
+padding.y = 10
+decorations = "full"
+opacity = 0.95
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+normal.style = "Semibold"
+size = 10.0
+
+[general]
+import = ["colors.toml"]

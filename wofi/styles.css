@@ -1,0 +1,64 @@
+/* Reseta as propriedades para todos os elementos */
+* {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* --- Janela Principal (#window) --- */
+/* Corresponde a "window" no Rofi */
+window {
+    background-color: #1F1F1F;
+    border-radius: 0px; /* Mantivemos o border-radius do tema que criamos antes */
+    padding: 0;
+}
+
+/* --- Caixa de Entrada (#input) --- */
+/* Corresponde a "inputbar" no Rofi */
+#input {
+    border-radius: 0px;
+}
+
+/* --- Lista de Resultados (#outer-box e #inner-box) --- */
+/* Corresponde a "listview" no Rofi */
+#outer-box {
+    margin: 0;
+    padding: 0px;
+    border: .5px solid #FFFFFF;
+}
+
+#scroll {
+    scrollbar-width: 0; /* Oculta a barra de rolagem, como no Rofi */
+    padding: 2px;
+}
+
+/* --- Item da Lista (#entry) --- */
+/* Corresponde a "element" no Rofi */
+#entry {
+    background-color: #1F1F1F;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 0;
+}
+
+/* --- Estado Selecionado do Item (#entry:selected) --- */
+/* Corresponde a "element selected" no Rofi */
+#entry:selected {
+    background-color: #373B41;
+    color: #FFFFFF;
+}
+
+/* --- Texto do Elemento (#text) --- */
+/* Corresponde a "element-text" no Rofi */
+#text {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* --- Imagem/Ícone do Elemento (#img) --- */
+#img {
+    margin-right: 8px;
+}
