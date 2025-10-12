@@ -26,8 +26,8 @@
     "breadcrumbs.enabled": false,
     "explorer.confirmDragAndDrop": false,
     "workbench.editor.showTabs": "single",
-    "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 1,
+    // "workbench.editor.limit.enabled": true,
+    // "workbench.editor.limit.value": 1,
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.hidesExplorerArrows": true,
@@ -40,5 +40,7 @@
     "editor.inlineSuggest.edits.showCollapsed": true,
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+    },
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true
 }
