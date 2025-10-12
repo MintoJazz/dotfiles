@@ -1,0 +1,33 @@
+[
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.openView"
+    },
+    {
+        "key": "Alt+Shift+Down",
+        "command": "editor.action.copyLinesDownAction"
+    },
+    {
+        "key": "Alt+Shift+Up",
+        "command": "editor.action.copyLinesUpAction"
+    },
+
+    {
+        "key": "Alt+d",
+        "command": "editor.action.deleteLines"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "-workbench.action.search.toggleQueryDetails",
+        "when": "inSearchEditor || searchViewletFocus"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "panelAlignment == 'center' || panelPosition != 'bottom' && panelPosition != 'top'"
+    },
+]

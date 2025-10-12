@@ -1,0 +1,15 @@
+ms-python.python
+ms-python.pylance
+ms-python.debugpy
+paulharter.micropico
+davescodemusings.mpremote
+charliermarsh.ruff
+editorconfig.editorconfig
+eamodio.gitlens
+yzhang.markdown-all-in-one
+sonarsource.sonarlint-vscode
+mikestead.dotenv
+miguelsolorio.min-theme
+pkief.material-icon-theme
+
+# cat ~/Documents/GitHub/dotfiles/vscode/extensions.list | xargs -L 1 code --install-extension
