@@ -26,8 +26,13 @@
         "when": "inSearchEditor || searchViewletFocus"
     },
     {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
         "key": "ctrl+shift+j",
-        "command": "workbench.action.toggleMaximizedPanel",
-        "when": "panelAlignment == 'center' || panelPosition != 'bottom' && panelPosition != 'top'"
+        "command": "workbench.action.terminal.kill",
+        "when": "!config.terminal.integrated.tabs.enabled && view == 'terminal' && config.terminal.integrated.tabs.hideCondition != 'never' || config.terminal.integrated.tabs.showActions == 'always' && view == 'terminal' && config.terminal.integrated.tabs.hideCondition != 'never' || isTerminalTabsNarrow && config.terminal.integrated.tabs.showActions == 'singleTerminalOrNarrow' && view == 'terminal' && config.terminal.integrated.tabs.hideCondition != 'never' || config.terminal.integrated.tabs.showActions == 'singleGroup' && terminalGroupCount == '1' && view == 'terminal' && config.terminal.integrated.tabs.hideCondition != 'never' || config.terminal.integrated.tabs.showActions == 'singleTerminal' && terminalGroupCount == '1' && view == 'terminal' && config.terminal.integrated.tabs.hideCondition != 'never' || config.terminal.integrated.tabs.showActions == 'singleTerminalOrNarrow' && terminalGroupCount == '1' && view == 'terminal' && config.terminal.integrated.tabs.hideCondition != 'never'"
     },
 ]

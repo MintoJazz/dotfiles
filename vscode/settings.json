@@ -25,11 +25,13 @@
     "chat.agent.enabled": false,
     "breadcrumbs.enabled": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.editor.showTabs": "single",
+    // "workbench.editor.showTabs": "single",
+    "workbench.tree.indent": 4,
+    "workbench.tree.renderIndentGuides": "none",
     // "workbench.editor.limit.enabled": true,
     // "workbench.editor.limit.value": 1,
     "workbench.startupEditor": "none",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "office-material-icon-theme",
     "material-icon-theme.hidesExplorerArrows": true,
     "workbench.tree.enableStickyScroll": false,
     "python.defaultInterpreterPath": "/bin/python3",
@@ -42,5 +44,39 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "git.confirmSync": false,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "sonarlint.rules": {
+        "java:S1659": {
+            "level": "off"
+        },
+        "java:S115": {
+            "level": "off"
+        },
+        "java:S1135": {
+            "level": "off"
+        },
+        "java:S106": {
+            "level": "off"
+        }
+    },
+    "sonarlint.automaticAnalysis": false,
+    "sonarlint.focusOnNewCode": false,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "database-client.autoSync": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "javascriptreact": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[sql]": {
+        
+    }
 }
